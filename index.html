@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Movies</title>
+<style>
+body { font-family: Arial; background:#111; color:#eee; padding:20px; }
+h1 { margin-bottom:10px; }
+button { margin-right:10px; padding:8px 12px; cursor:pointer; }
+ul { list-style:none; padding:0; }
+li { margin:6px 0; }
+a { color:#4da6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.year { color:#aaa; margin-left:8px; }
+</style>
+</head>
+<body>
+
+<h1>🎬 My Movies</h1>
+
+<button onclick="sortByName()">Sort A-Z</button>
+<button onclick="sortByYear()">Sort by Year</button>
+
+<ul id="movieList"></ul>
+
+<script>
+const movies = [
+{ title: "2 Guns", year: 2013 },
+{ title: "A Few Good Men", year: 1992 },
+{ title: "Amadeus", year: 1984 },
+{ title: "American Hustle", year: 2013 },
+{ title: "Catch Me If You Can", year: 2002 },
+{ title: "City of Lies", year: 2018 },
+{ title: "Deadpool 2", year: 2018 },
+{ title: "Die Hard", year: 1988 },
+{ title: "Die Hard 2", year: 1990 },
+{ title: "Die Hard With a Vengeance", year: 1995 },
+{ title: "Django Unchained", year: 2012 },
+{ title: "Enemy at the Gates", year: 2001 },
+{ title: "Eurotrip", year: 2004 },
+{ title: "Good Will Hunting", year: 1997 },
+{ title: "High School High", year: 1996 },
+{ title: "I, Robot", year: 2004 },
+{ title: "Interstate 60", year: 2002 },
+{ title: "John Carter", year: 2011 },
+{ title: "King Arthur", year: 2004 },
+{ title: "Kung Fu Hustle", year: 2004 },
+{ title: "L.A. Confidential", year: 1997 },
+{ title: "Lucky Number Slevin", year: 2006 },
+{ title: "Now You See Me", year: 2013 },
+{ title: "Ong Bak", year: 2003 },
+{ title: "Ong Bak 2", year: 2008 },
+{ title: "Ong Bak 3", year: 2010 },
+{ title: "Overboard", year: 2018 },
+{ title: "Raise Your Voice", year: 2004 },
+{ title: "Red Scorpion", year: 1989 },
+{ title: "RocknRolla", year: 2008 },
+{ title: "Romeo Must Die", year: 2000 },
+{ title: "Snatch", year: 2000 },
+{ title: "Stand Up Guys", year: 2012 },
+{ title: "Taken", year: 2008 },
+{ title: "Target Number One", year: 2020 },
+{ title: "The Departed", year: 2006 },
+{ title: "The International", year: 2009 },
+{ title: "The Mask of Zorro", year: 1998 },
+{ title: "The 6th Day", year: 2000 },
+{ title: "The Courier", year: 2019 },
+{ title: "The Green Mile", year: 1999 },
+{ title: "The Karate Kid", year: 1984 },
+{ title: "The New Guy", year: 2002 },
+{ title: "The Professor", year: 2018 },
+{ title: "The Siege", year: 1998 },
+{ title: "The Sum of All Fears", year: 2002 },
+{ title: "The Thomas Crown Affair", year: 1999 },
+{ title: "The Usual Suspects", year: 1995 },
+{ title: "The Warrior's Way", year: 2010 },
+{ title: "This Means War", year: 2012 },
+{ title: "Tron Legacy", year: 2010 },
+{ title: "Uncle Drew", year: 2018 },
+{ title: "V for Vendetta", year: 2005 },
+{ title: "Wanted", year: 2008 }
+];
+
+function render(list) {
+  const ul = document.getElementById("movieList");
+  ul.innerHTML = "";
+  list.forEach(m => {
+    const li = document.createElement("li");
+    const url = "https://www.imdb.com/find?q=" + encodeURIComponent(m.title + " " + m.year);
+    li.innerHTML = `<a href="${url}" target="_blank">${m.title}</a> <span class="year">(${m.year})</span>`;
+    ul.appendChild(li);
+  });
+}
+
+function sortByName() {
+  render([...movies].sort((a,b)=>a.title.localeCompare(b.title)));
+}
+
+function sortByYear() {
+  render([...movies].sort((a,b)=>a.year - b.year));
+}
+
+sortByName();
+</script>
+
+</body>
+</html>
