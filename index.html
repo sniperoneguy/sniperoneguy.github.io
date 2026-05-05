@@ -196,8 +196,8 @@
 </head>
 <body>
   <header>
-    <h1>🎬 Movie Library</h1>
-    <p class="subtitle">SSD movie index with IMDb links, posters, trailers and sorting.</p>
+    <h1 id="pageTitle">🎬 Movie Library</h1>
+    <p class="subtitle" id="pageSubtitle">SSD movie index with IMDb links, posters, trailers and sorting.</p>
   </header>
 
   <section class="toolbar">
@@ -210,15 +210,14 @@
       <option value="rating-desc">IMDb rating ↓</option>
       <option value="rating-asc">IMDb rating ↑</option>
     </select>
-    <button id="refresh">Refresh metadata</button>
+    <button id="refresh">Refresh rating</button>
   </section>
 
   <main>
     <p class="meta" id="count"></p>
     <section class="grid" id="grid"></section>
     <p class="notice">
-      Posters and IMDb ratings are loaded through OMDb if you add an API key in the code.
-      Without an API key, IMDb and YouTube links still work, and poster/rating fields remain placeholders.
+      Posters are loaded from the local <code>posters/</code> folder using each IMDb ID as filename, for example <code>posters/tt0095016.jpg</code>. IMDb ratings can still be refreshed through OMDb if an API key is added.
     </p>
   </main>
 
@@ -226,66 +225,35 @@
     // 1) Optional: get a free OMDb API key from https://www.omdbapi.com/apikey.aspx
     // 2) Replace this value, then commit the file again to GitHub Pages.
     // Note: static sites expose this key in browser source. For personal use, this is usually acceptable.
-    const OMDB_API_KEY = "c54d163f";
+    const OMDB_API_KEY = "";
 
-    const movies = [
-      { title: "2 Guns", year: 2013, imdbId: "tt1272878" },
-      { title: "A Few Good Men", year: 1992, imdbId: "tt0104257" },
-      { title: "Amadeus", year: 1984, imdbId: "tt0086879" },
-      { title: "American Hustle", year: 2013, imdbId: "tt1800241" },
-      { title: "Catch Me If You Can", year: 2002, imdbId: "tt0264464" },
-      { title: "City of Lies", year: 2018, imdbId: "tt2677722" },
-      { title: "Deadpool 2", year: 2018, imdbId: "tt5463162" },
-      { title: "Die Hard", year: 1988, imdbId: "tt0095016" },
-      { title: "Die Hard 2", year: 1990, imdbId: "tt0099423" },
-      { title: "Die Hard with a Vengeance", year: 1995, imdbId: "tt0112864" },
-      { title: "Django Unchained", year: 2012, imdbId: "tt1853728" },
-      { title: "Enemy at the Gates", year: 2001, imdbId: "tt0215750" },
-      { title: "EuroTrip", year: 2004, imdbId: "tt0356150" },
-      { title: "Good Will Hunting", year: 1997, imdbId: "tt0119217" },
-      { title: "High School High", year: 1996, imdbId: "tt0116531" },
-      { title: "Home Alone", year: 1990, imdbId: "tt0099785" },
-      { title: "Home Alone 2: Lost in New York", year: 1992, imdbId: "tt0104431" },
-      { title: "I, Robot", year: 2004, imdbId: "tt0343818" },
-      { title: "Interstate 60", year: 2002, imdbId: "tt0165832" },
-      { title: "John Carter", year: 2012, imdbId: "tt0401729" },
-      { title: "King Arthur", year: 2004, imdbId: "tt0349683" },
-      { title: "Kung Fu Hustle", year: 2004, imdbId: "tt0373074" },
-      { title: "L.A. Confidential", year: 1997, imdbId: "tt0119488" },
-      { title: "Lucky Number Slevin", year: 2006, imdbId: "tt0425210" },
-      { title: "Now You See Me", year: 2013, imdbId: "tt1670345" },
-      { title: "Ong-Bak: The Thai Warrior", year: 2003, imdbId: "tt0368909" },
-      { title: "Ong Bak 2", year: 2008, imdbId: "tt0785035" },
-      { title: "Ong Bak 3", year: 2010, imdbId: "tt1653690" },
-      { title: "Overboard", year: 2018, imdbId: "tt1563742" },
-      { title: "Raise Your Voice", year: 2004, imdbId: "tt0361696" },
-      { title: "Red Scorpion", year: 1988, imdbId: "tt0098180" },
-      { title: "RocknRolla", year: 2008, imdbId: "tt1032755" },
-      { title: "Romeo Must Die", year: 2000, imdbId: "tt0165929" },
-      { title: "Snatch", year: 2000, imdbId: "tt0208092" },
-      { title: "Stand Up Guys", year: 2012, imdbId: "tt1389096" },
-      { title: "Taken", year: 2008, imdbId: "tt0936501" },
-      { title: "Target Number One", year: 2020, imdbId: "tt1656177" },
-      { title: "The Departed", year: 2006, imdbId: "tt0407887" },
-      { title: "The International", year: 2009, imdbId: "tt0963178" },
-      { title: "The Mask of Zorro", year: 1998, imdbId: "tt0120746" },
-      { title: "The 6th Day", year: 2000, imdbId: "tt0216216" },
-      { title: "The Courier", year: 2019, imdbId: "tt8075016" },
-      { title: "The Green Mile", year: 1999, imdbId: "tt0120689" },
-      { title: "The Karate Kid", year: 1984, imdbId: "tt0087538" },
-      { title: "The New Guy", year: 2002, imdbId: "tt0241760" },
-      { title: "The Professor", year: 2018, imdbId: "tt6865690" },
-      { title: "The Siege", year: 1998, imdbId: "tt0133952" },
-      { title: "The Sum of All Fears", year: 2002, imdbId: "tt0164184" },
-      { title: "The Thomas Crown Affair", year: 1999, imdbId: "tt0155267" },
-      { title: "The Usual Suspects", year: 1995, imdbId: "tt0114814" },
-      { title: "The Warrior's Way", year: 2010, imdbId: "tt1032751" },
-      { title: "This Means War", year: 2012, imdbId: "tt1596350" },
-      { title: "Tron: Legacy", year: 2010, imdbId: "tt1104001" },
-      { title: "Uncle Drew", year: 2018, imdbId: "tt7334528" },
-      { title: "V for Vendetta", year: 2005, imdbId: "tt0434409" },
-      { title: "Wanted", year: 2008, imdbId: "tt0493464" }
-    ];
+    const LISTS = {
+      "ssd-1": { name: "SSD 1", file: "movies/ssd-1.json" },
+      "ssd-2": { name: "SSD 2", file: "movies/ssd-2.json" },
+      "ssd-3": { name: "SSD 3", file: "movies/ssd-3.json" }
+    };
+
+    let movies = [];
+    let currentListKey = new URLSearchParams(window.location.search).get("list") || "ssd-1";
+
+    async function loadMovies() {
+      if (!LISTS[currentListKey]) currentListKey = "ssd-1";
+
+      const list = LISTS[currentListKey];
+      document.getElementById("pageTitle").textContent = `🎬 ${list.name}`;
+      document.getElementById("pageSubtitle").textContent = `Movie index for ${list.name}. IMDb links, posters, trailers and sorting.`;
+
+      try {
+        const response = await fetch(list.file, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Could not load ${list.file}`);
+        movies = await response.json();
+        render();
+      } catch (error) {
+        console.error(error);
+        grid.innerHTML = `<p>Could not load movie list: <code>${list.file}</code></p>`;
+        count.textContent = "";
+      }
+    }
 
     const grid = document.getElementById("grid");
     const count = document.getElementById("count");
@@ -294,7 +262,7 @@
     const refreshButton = document.getElementById("refresh");
 
     const CACHE_KEY = "movieMetadata.v1";
-    let metadata = JSON.parse(localStorage.getItem(CACHE_KEY) || "{}");
+    let metadata = {};
 
     function imdbUrl(movie) {
       return `https://www.imdb.com/title/${movie.imdbId}/`;
@@ -305,13 +273,11 @@
     }
 
     function getPoster(movie) {
-      const data = metadata[movie.imdbId];
-      return data && data.poster && data.poster !== "N/A" ? data.poster : null;
+      return `posters/${movie.imdbId}.jpg`;
     }
 
     function getRating(movie) {
-      const data = metadata[movie.imdbId];
-      const rating = data && data.rating && data.rating !== "N/A" ? parseFloat(data.rating) : NaN;
+      const rating = parseFloat(movie.imdbRating);
       return Number.isFinite(rating) ? rating : null;
     }
 
@@ -348,7 +314,7 @@
         return `
           <article class="card">
             <div class="poster">
-              ${poster ? `<img loading="lazy" src="${poster}" alt="${escapeHtml(movie.title)} poster" />` : `<span>No poster<br>${escapeHtml(movie.title)}</span>`}
+              <img loading="lazy" src="${poster}" alt="${escapeHtml(movie.title)} poster" onerror="this.remove(); this.parentElement.innerHTML='<span>No poster<br>${escapeHtml(movie.title).replace(/'/g, '&#039;')}</span>';" />
             </div>
             <div class="content">
               <h2 class="title">${escapeHtml(movie.title)}</h2>
@@ -375,45 +341,14 @@
     }
 
     async function refreshMetadata() {
-      if (!OMDB_API_KEY) {
-        alert("Add your OMDb API key in the OMDB_API_KEY constant first.");
-        return;
-      }
-
-      refreshButton.disabled = true;
-      refreshButton.textContent = "Loading...";
-
-      try {
-        for (const movie of movies) {
-          if (metadata[movie.imdbId]?.poster && metadata[movie.imdbId]?.rating) continue;
-
-          const url = `https://www.omdbapi.com/?i=${movie.imdbId}&apikey=${OMDB_API_KEY}`;
-          const response = await fetch(url);
-          const data = await response.json();
-
-          if (data && data.Response !== "False") {
-            metadata[movie.imdbId] = {
-              poster: data.Poster,
-              rating: data.imdbRating
-            };
-            localStorage.setItem(CACHE_KEY, JSON.stringify(metadata));
-            render();
-          }
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Could not refresh metadata. Check API key / network / console.");
-      } finally {
-        refreshButton.disabled = false;
-        refreshButton.textContent = "Refresh metadata";
-      }
+      alert("Metadata is updated from GitHub Actions: Actions → Update movie metadata → Run workflow.");
     }
 
     sortSelect.addEventListener("change", render);
     searchInput.addEventListener("input", render);
     refreshButton.addEventListener("click", refreshMetadata);
 
-    render();
+    loadMovies();
   </script>
 </body>
 </html>
