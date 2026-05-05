@@ -26,6 +26,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          ggit add movies/ posters/ index.html scripts/update_movies.py
+          git add movies/ posters/ index.html scripts/update_movies.py
           git commit -m "Update movie metadata" || echo "No changes"
           git push
