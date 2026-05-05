@@ -1,107 +1,419 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
-<meta charset="UTF-8">
-<title>My Movies</title>
-<style>
-body { font-family: Arial; background:#111; color:#eee; padding:20px; }
-h1 { margin-bottom:10px; }
-button { margin-right:10px; padding:8px 12px; cursor:pointer; }
-ul { list-style:none; padding:0; }
-li { margin:6px 0; }
-a { color:#4da6ff; text-decoration:none; }
-a:hover { text-decoration:underline; }
-.year { color:#aaa; margin-left:8px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Library</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #181b24;
+      --card-hover: #202431;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --accent: #f5c518;
+      --link: #7dd3fc;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1b2030 0%, var(--bg) 45%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 28px 20px 18px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 5vw, 44px);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 22px;
+    }
+
+    input, select, button {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 11px 13px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input {
+      flex: 1 1 240px;
+      min-width: 0;
+    }
+
+    select, button {
+      cursor: pointer;
+    }
+
+    button:hover, select:hover, input:focus {
+      background: rgba(255,255,255,0.10);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 36px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)), var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+      min-height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      background: var(--card-hover);
+      border-color: rgba(245,197,24,0.35);
+    }
+
+    .poster {
+      aspect-ratio: 2 / 3;
+      background: #272a36;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content {
+      padding: 12px;
+    }
+
+    .title {
+      margin: 0 0 5px;
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .year {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-top: 9px;
+      font-size: 14px;
+    }
+
+    .links {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .links a {
+      flex: 1;
+      text-align: center;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 8px 8px;
+      font-size: 13px;
+    }
+
+    .links a:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .notice {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 520px) {
+      header { padding-top: 22px; }
+      .toolbar { align-items: stretch; }
+      select, button { flex: 1 1 calc(50% - 10px); }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .content { padding: 10px; }
+      .links { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>🎬 Movie Library</h1>
+    <p class="subtitle">SSD movie index with IMDb links, posters, trailers and sorting.</p>
+  </header>
 
-<h1>🎬 My Movies</h1>
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="Search movie..." />
+    <select id="sort">
+      <option value="title-asc">Title A-Z</option>
+      <option value="title-desc">Title Z-A</option>
+      <option value="year-asc">Year ↑</option>
+      <option value="year-desc">Year ↓</option>
+      <option value="rating-desc">IMDb rating ↓</option>
+      <option value="rating-asc">IMDb rating ↑</option>
+    </select>
+    <button id="refresh">Refresh metadata</button>
+  </section>
 
-<button onclick="sortByName()">Sort A-Z</button>
-<button onclick="sortByYear()">Sort by Year</button>
+  <main>
+    <p class="meta" id="count"></p>
+    <section class="grid" id="grid"></section>
+    <p class="notice">
+      Posters and IMDb ratings are loaded through OMDb if you add an API key in the code.
+      Without an API key, IMDb and YouTube links still work, and poster/rating fields remain placeholders.
+    </p>
+  </main>
 
-<ul id="movieList"></ul>
+  <script>
+    // 1) Optional: get a free OMDb API key from https://www.omdbapi.com/apikey.aspx
+    // 2) Replace this value, then commit the file again to GitHub Pages.
+    // Note: static sites expose this key in browser source. For personal use, this is usually acceptable.
+    const OMDB_API_KEY = "c54d163f";
 
-<script>
-const movies = [
-{ title: "2 Guns", year: 2013 },
-{ title: "A Few Good Men", year: 1992 },
-{ title: "Amadeus", year: 1984 },
-{ title: "American Hustle", year: 2013 },
-{ title: "Catch Me If You Can", year: 2002 },
-{ title: "City of Lies", year: 2018 },
-{ title: "Deadpool 2", year: 2018 },
-{ title: "Die Hard", year: 1988 },
-{ title: "Die Hard 2", year: 1990 },
-{ title: "Die Hard With a Vengeance", year: 1995 },
-{ title: "Django Unchained", year: 2012 },
-{ title: "Enemy at the Gates", year: 2001 },
-{ title: "Eurotrip", year: 2004 },
-{ title: "Good Will Hunting", year: 1997 },
-{ title: "High School High", year: 1996 },
-{ title: "I, Robot", year: 2004 },
-{ title: "Interstate 60", year: 2002 },
-{ title: "John Carter", year: 2011 },
-{ title: "King Arthur", year: 2004 },
-{ title: "Kung Fu Hustle", year: 2004 },
-{ title: "L.A. Confidential", year: 1997 },
-{ title: "Lucky Number Slevin", year: 2006 },
-{ title: "Now You See Me", year: 2013 },
-{ title: "Ong Bak", year: 2003 },
-{ title: "Ong Bak 2", year: 2008 },
-{ title: "Ong Bak 3", year: 2010 },
-{ title: "Overboard", year: 2018 },
-{ title: "Raise Your Voice", year: 2004 },
-{ title: "Red Scorpion", year: 1989 },
-{ title: "RocknRolla", year: 2008 },
-{ title: "Romeo Must Die", year: 2000 },
-{ title: "Snatch", year: 2000 },
-{ title: "Stand Up Guys", year: 2012 },
-{ title: "Taken", year: 2008 },
-{ title: "Target Number One", year: 2020 },
-{ title: "The Departed", year: 2006 },
-{ title: "The International", year: 2009 },
-{ title: "The Mask of Zorro", year: 1998 },
-{ title: "The 6th Day", year: 2000 },
-{ title: "The Courier", year: 2019 },
-{ title: "The Green Mile", year: 1999 },
-{ title: "The Karate Kid", year: 1984 },
-{ title: "The New Guy", year: 2002 },
-{ title: "The Professor", year: 2018 },
-{ title: "The Siege", year: 1998 },
-{ title: "The Sum of All Fears", year: 2002 },
-{ title: "The Thomas Crown Affair", year: 1999 },
-{ title: "The Usual Suspects", year: 1995 },
-{ title: "The Warrior's Way", year: 2010 },
-{ title: "This Means War", year: 2012 },
-{ title: "Tron Legacy", year: 2010 },
-{ title: "Uncle Drew", year: 2018 },
-{ title: "V for Vendetta", year: 2005 },
-{ title: "Wanted", year: 2008 }
-];
+    const movies = [
+      { title: "2 Guns", year: 2013, imdbId: "tt1272878" },
+      { title: "A Few Good Men", year: 1992, imdbId: "tt0104257" },
+      { title: "Amadeus", year: 1984, imdbId: "tt0086879" },
+      { title: "American Hustle", year: 2013, imdbId: "tt1800241" },
+      { title: "Catch Me If You Can", year: 2002, imdbId: "tt0264464" },
+      { title: "City of Lies", year: 2018, imdbId: "tt2677722" },
+      { title: "Deadpool 2", year: 2018, imdbId: "tt5463162" },
+      { title: "Die Hard", year: 1988, imdbId: "tt0095016" },
+      { title: "Die Hard 2", year: 1990, imdbId: "tt0099423" },
+      { title: "Die Hard with a Vengeance", year: 1995, imdbId: "tt0112864" },
+      { title: "Django Unchained", year: 2012, imdbId: "tt1853728" },
+      { title: "Enemy at the Gates", year: 2001, imdbId: "tt0215750" },
+      { title: "EuroTrip", year: 2004, imdbId: "tt0356150" },
+      { title: "Good Will Hunting", year: 1997, imdbId: "tt0119217" },
+      { title: "High School High", year: 1996, imdbId: "tt0116531" },
+      { title: "Home Alone", year: 1990, imdbId: "tt0099785" },
+      { title: "Home Alone 2: Lost in New York", year: 1992, imdbId: "tt0104431" },
+      { title: "I, Robot", year: 2004, imdbId: "tt0343818" },
+      { title: "Interstate 60", year: 2002, imdbId: "tt0165832" },
+      { title: "John Carter", year: 2012, imdbId: "tt0401729" },
+      { title: "King Arthur", year: 2004, imdbId: "tt0349683" },
+      { title: "Kung Fu Hustle", year: 2004, imdbId: "tt0373074" },
+      { title: "L.A. Confidential", year: 1997, imdbId: "tt0119488" },
+      { title: "Lucky Number Slevin", year: 2006, imdbId: "tt0425210" },
+      { title: "Now You See Me", year: 2013, imdbId: "tt1670345" },
+      { title: "Ong-Bak: The Thai Warrior", year: 2003, imdbId: "tt0368909" },
+      { title: "Ong Bak 2", year: 2008, imdbId: "tt0785035" },
+      { title: "Ong Bak 3", year: 2010, imdbId: "tt1653690" },
+      { title: "Overboard", year: 2018, imdbId: "tt1563742" },
+      { title: "Raise Your Voice", year: 2004, imdbId: "tt0361696" },
+      { title: "Red Scorpion", year: 1988, imdbId: "tt0098180" },
+      { title: "RocknRolla", year: 2008, imdbId: "tt1032755" },
+      { title: "Romeo Must Die", year: 2000, imdbId: "tt0165929" },
+      { title: "Snatch", year: 2000, imdbId: "tt0208092" },
+      { title: "Stand Up Guys", year: 2012, imdbId: "tt1389096" },
+      { title: "Taken", year: 2008, imdbId: "tt0936501" },
+      { title: "Target Number One", year: 2020, imdbId: "tt1656177" },
+      { title: "The Departed", year: 2006, imdbId: "tt0407887" },
+      { title: "The International", year: 2009, imdbId: "tt0963178" },
+      { title: "The Mask of Zorro", year: 1998, imdbId: "tt0120746" },
+      { title: "The 6th Day", year: 2000, imdbId: "tt0216216" },
+      { title: "The Courier", year: 2019, imdbId: "tt8075016" },
+      { title: "The Green Mile", year: 1999, imdbId: "tt0120689" },
+      { title: "The Karate Kid", year: 1984, imdbId: "tt0087538" },
+      { title: "The New Guy", year: 2002, imdbId: "tt0241760" },
+      { title: "The Professor", year: 2018, imdbId: "tt6865690" },
+      { title: "The Siege", year: 1998, imdbId: "tt0133952" },
+      { title: "The Sum of All Fears", year: 2002, imdbId: "tt0164184" },
+      { title: "The Thomas Crown Affair", year: 1999, imdbId: "tt0155267" },
+      { title: "The Usual Suspects", year: 1995, imdbId: "tt0114814" },
+      { title: "The Warrior's Way", year: 2010, imdbId: "tt1032751" },
+      { title: "This Means War", year: 2012, imdbId: "tt1596350" },
+      { title: "Tron: Legacy", year: 2010, imdbId: "tt1104001" },
+      { title: "Uncle Drew", year: 2018, imdbId: "tt7334528" },
+      { title: "V for Vendetta", year: 2005, imdbId: "tt0434409" },
+      { title: "Wanted", year: 2008, imdbId: "tt0493464" }
+    ];
 
-function render(list) {
-  const ul = document.getElementById("movieList");
-  ul.innerHTML = "";
-  list.forEach(m => {
-    const li = document.createElement("li");
-    const url = "https://www.imdb.com/find?q=" + encodeURIComponent(m.title + " " + m.year);
-    li.innerHTML = `<a href="${url}" target="_blank">${m.title}</a> <span class="year">(${m.year})</span>`;
-    ul.appendChild(li);
-  });
-}
+    const grid = document.getElementById("grid");
+    const count = document.getElementById("count");
+    const sortSelect = document.getElementById("sort");
+    const searchInput = document.getElementById("search");
+    const refreshButton = document.getElementById("refresh");
 
-function sortByName() {
-  render([...movies].sort((a,b)=>a.title.localeCompare(b.title)));
-}
+    const CACHE_KEY = "movieMetadata.v1";
+    let metadata = JSON.parse(localStorage.getItem(CACHE_KEY) || "{}");
 
-function sortByYear() {
-  render([...movies].sort((a,b)=>a.year - b.year));
-}
+    function imdbUrl(movie) {
+      return `https://www.imdb.com/title/${movie.imdbId}/`;
+    }
 
-sortByName();
-</script>
+    function trailerUrl(movie) {
+      return `https://www.youtube.com/results?search_query=${encodeURIComponent(movie.title + " " + movie.year + " official trailer")}`;
+    }
 
+    function getPoster(movie) {
+      const data = metadata[movie.imdbId];
+      return data && data.poster && data.poster !== "N/A" ? data.poster : null;
+    }
+
+    function getRating(movie) {
+      const data = metadata[movie.imdbId];
+      const rating = data && data.rating && data.rating !== "N/A" ? parseFloat(data.rating) : NaN;
+      return Number.isFinite(rating) ? rating : null;
+    }
+
+    function sortedAndFilteredMovies() {
+      const query = searchInput.value.trim().toLowerCase();
+      const sort = sortSelect.value;
+
+      return [...movies]
+        .filter(movie => movie.title.toLowerCase().includes(query) || String(movie.year).includes(query))
+        .sort((a, b) => {
+          const ratingA = getRating(a) ?? -1;
+          const ratingB = getRating(b) ?? -1;
+
+          switch (sort) {
+            case "title-desc": return b.title.localeCompare(a.title);
+            case "year-asc": return a.year - b.year || a.title.localeCompare(b.title);
+            case "year-desc": return b.year - a.year || a.title.localeCompare(b.title);
+            case "rating-desc": return ratingB - ratingA || a.title.localeCompare(b.title);
+            case "rating-asc": return ratingA - ratingB || a.title.localeCompare(b.title);
+            case "title-asc":
+            default: return a.title.localeCompare(b.title);
+          }
+        });
+    }
+
+    function render() {
+      const list = sortedAndFilteredMovies();
+      count.textContent = `${list.length} movie${list.length === 1 ? "" : "s"}`;
+
+      grid.innerHTML = list.map(movie => {
+        const poster = getPoster(movie);
+        const rating = getRating(movie);
+
+        return `
+          <article class="card">
+            <div class="poster">
+              ${poster ? `<img loading="lazy" src="${poster}" alt="${escapeHtml(movie.title)} poster" />` : `<span>No poster<br>${escapeHtml(movie.title)}</span>`}
+            </div>
+            <div class="content">
+              <h2 class="title">${escapeHtml(movie.title)}</h2>
+              <div class="year">${movie.year}</div>
+              <div class="rating">★ ${rating ?? "—"}</div>
+              <div class="links">
+                <a href="${imdbUrl(movie)}" target="_blank" rel="noopener">IMDb</a>
+                <a href="${trailerUrl(movie)}" target="_blank" rel="noopener" title="YouTube trailer">▶ Trailer</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#039;",
+        '"': "&quot;"
+      }[char]));
+    }
+
+    async function refreshMetadata() {
+      if (!OMDB_API_KEY) {
+        alert("Add your OMDb API key in the OMDB_API_KEY constant first.");
+        return;
+      }
+
+      refreshButton.disabled = true;
+      refreshButton.textContent = "Loading...";
+
+      try {
+        for (const movie of movies) {
+          if (metadata[movie.imdbId]?.poster && metadata[movie.imdbId]?.rating) continue;
+
+          const url = `https://www.omdbapi.com/?i=${movie.imdbId}&apikey=${OMDB_API_KEY}`;
+          const response = await fetch(url);
+          const data = await response.json();
+
+          if (data && data.Response !== "False") {
+            metadata[movie.imdbId] = {
+              poster: data.Poster,
+              rating: data.imdbRating
+            };
+            localStorage.setItem(CACHE_KEY, JSON.stringify(metadata));
+            render();
+          }
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Could not refresh metadata. Check API key / network / console.");
+      } finally {
+        refreshButton.disabled = false;
+        refreshButton.textContent = "Refresh metadata";
+      }
+    }
+
+    sortSelect.addEventListener("change", render);
+    searchInput.addEventListener("input", render);
+    refreshButton.addEventListener("click", refreshMetadata);
+
+    render();
+  </script>
 </body>
 </html>
