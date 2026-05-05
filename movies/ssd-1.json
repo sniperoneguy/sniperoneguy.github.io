@@ -1,0 +1,506 @@
+[
+  {
+    "title": "2 Guns",
+    "year": 2013,
+    "imdbId": "tt1272878",
+    "imdbRating": "6.7",
+    "runtime": "109 min",
+    "genre": "Action, Comedy, Crime",
+    "plot": "Two hardened criminals get into trouble with the US border patrol after meeting with a Mexican drug lord, and then revelations start to unfold."
+  },
+  {
+    "title": "A Few Good Men",
+    "year": 1992,
+    "imdbId": "tt0104257",
+    "imdbRating": "7.7",
+    "runtime": "138 min",
+    "genre": "Drama, Thriller",
+    "plot": "A military lawyer intends to prove that two US Marines charged with murdering a fellow Marine were only following their base commander's orders."
+  },
+  {
+    "title": "Amadeus",
+    "year": 1984,
+    "imdbId": "tt0086879",
+    "imdbRating": "8.4",
+    "runtime": "160 min",
+    "genre": "Biography, Drama, Music",
+    "plot": "The life and work of Wolfgang Amadeus Mozart seen through the eyes of his contemporary and rival, Antonio Salieri."
+  },
+  {
+    "title": "American Hustle",
+    "year": 2013,
+    "imdbId": "tt1800241",
+    "imdbRating": "7.2",
+    "runtime": "138 min",
+    "genre": "Crime, Drama",
+    "plot": "A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and the Mafia."
+  },
+  {
+    "title": "Catch Me If You Can",
+    "year": 2002,
+    "imdbId": "tt0264464",
+    "imdbRating": "8.1",
+    "runtime": "141 min",
+    "genre": "Biography, Crime, Drama",
+    "plot": "Barely 17 yet, Frank is a skilled forger who has passed as a doctor, lawyer and pilot. FBI agent Carl becomes obsessed with tracking down the con man, who only revels in the pursuit."
+  },
+  {
+    "title": "City of Lies",
+    "year": 2018,
+    "imdbId": "tt2677722",
+    "imdbRating": "6.5",
+    "runtime": "112 min",
+    "genre": "Biography, Crime, Drama",
+    "plot": "Russell Poole and Jack Jackson investigate the murder of rapper Notorious B.I.G."
+  },
+  {
+    "title": "Deadpool 2",
+    "year": 2018,
+    "imdbId": "tt5463162",
+    "imdbRating": "7.6",
+    "runtime": "119 min",
+    "genre": "Action, Adventure, Comedy",
+    "plot": "Foul-mouthed mutant mercenary Wade Wilson (a.k.a. Deadpool) assembles a team of fellow mutant rogues to protect a young boy with abilities from the brutal, time-traveling cyborg Cable."
+  },
+  {
+    "title": "Die Hard",
+    "year": 1988,
+    "imdbId": "tt0095016",
+    "imdbRating": "8.2",
+    "runtime": "132 min",
+    "genre": "Action, Thriller",
+    "plot": "A New York City cop, John McClane, tries to save his estranged wife and several others taken hostage by terrorists during a Christmas Eve party at the Nakatomi Plaza Skyscraper in Los Angeles, California."
+  },
+  {
+    "title": "Die Hard 2",
+    "year": 1990,
+    "imdbId": "tt0099423",
+    "imdbRating": "7.2",
+    "runtime": "124 min",
+    "genre": "Action, Thriller",
+    "plot": "One year after the Nakatomi Plaza incident, John McClane faces off against terrorists who seize control of Washington Dulles Airport's systems on Christmas Eve, endangering multiple incoming flights, including one carrying his wif..."
+  },
+  {
+    "title": "Die Hard with a Vengeance",
+    "year": 1995,
+    "imdbId": "tt0112864",
+    "imdbRating": "7.6",
+    "runtime": "128 min",
+    "genre": "Action, Adventure, Thriller",
+    "plot": "John McClane is forced out of suspension to play a game of \"Simon Says\" by a terrorist who has planted bombs all around New York City and will detonate them if McClane doesn't do what he says."
+  },
+  {
+    "title": "Django Unchained",
+    "year": 2012,
+    "imdbId": "tt1853728",
+    "imdbRating": "8.5",
+    "runtime": "165 min",
+    "genre": "Drama, Western",
+    "plot": "With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi."
+  },
+  {
+    "title": "Enemy at the Gates",
+    "year": 2001,
+    "imdbId": "tt0215750",
+    "imdbRating": "7.5",
+    "runtime": "131 min",
+    "genre": "Action, Drama, War",
+    "plot": "A Russian and a German sniper play a game of cat-and-mouse during the Battle of Stalingrad."
+  },
+  {
+    "title": "EuroTrip",
+    "year": 2004,
+    "imdbId": "tt0356150",
+    "imdbRating": "6.6",
+    "runtime": "92 min",
+    "genre": "Comedy",
+    "plot": "Dumped by his girlfriend, a high school grad decides to embark on an overseas adventure in Europe with his friends."
+  },
+  {
+    "title": "Good Will Hunting",
+    "year": 1997,
+    "imdbId": "tt0119217",
+    "imdbRating": "8.4",
+    "runtime": "126 min",
+    "genre": "Drama, Romance",
+    "plot": "A therapist counsels Will Hunting, a janitor with a genius IQ."
+  },
+  {
+    "title": "High School High",
+    "year": 1996,
+    "imdbId": "tt0116531",
+    "imdbRating": "5.6",
+    "runtime": "86 min",
+    "genre": "Comedy, Crime, Romance",
+    "plot": "Richard Clark has just left the well-known Wellington Academy to teach at Marion Barry High School. Now, he will try to inspire the D-average students into making good grades and try to woo a fellow teacher."
+  },
+  {
+    "title": "Home Alone",
+    "year": 1990,
+    "imdbId": "tt0099785",
+    "imdbRating": "7.8",
+    "runtime": "103 min",
+    "genre": "Comedy, Family",
+    "plot": "An eight-year-old troublemaker, mistakenly left home alone, must defend his home against a pair of burglars on Christmas Eve."
+  },
+  {
+    "title": "Home Alone 2: Lost in New York",
+    "year": 1992,
+    "imdbId": "tt0104431",
+    "imdbRating": "6.9",
+    "runtime": "120 min",
+    "genre": "Adventure, Comedy, Crime",
+    "plot": "Kevin is separated from his family again when he accidentally boards a flight to New York City during a Christmas trip to Miami. However he crosses paths with the same burglars, who now plan to rob a toy store on Christmas Eve."
+  },
+  {
+    "title": "I, Robot",
+    "year": 2004,
+    "imdbId": "tt0343818",
+    "imdbRating": "7.1",
+    "runtime": "115 min",
+    "genre": "Action, Mystery, Sci-Fi",
+    "plot": "In 2035, a technophobic cop investigates a crime that may have been perpetrated by a robot, which leads to a larger threat to humanity."
+  },
+  {
+    "title": "Interstate 60",
+    "year": 2002,
+    "imdbId": "tt0165832",
+    "imdbRating": "7.5",
+    "runtime": "116 min",
+    "genre": "Adventure, Comedy, Drama",
+    "plot": "Neal Oliver, a very confused young artist, takes a journey of a lifetime on a highway that doesn't exist on any map, going to places he's never heard of, searching for an answer and his dream girl."
+  },
+  {
+    "title": "John Carter",
+    "year": 2012,
+    "imdbId": "tt0401729",
+    "imdbRating": "6.6",
+    "runtime": "132 min",
+    "genre": "Action, Adventure, Sci-Fi",
+    "plot": "A war-weary former army captain is inexplicably transported to Mars and reluctantly becomes embroiled in a conflict of epic proportions."
+  },
+  {
+    "title": "King Arthur",
+    "year": 2004,
+    "imdbId": "tt0349683",
+    "imdbRating": "6.3",
+    "runtime": "126 min",
+    "genre": "Action, Adventure, Drama",
+    "plot": "A demystified take on the tale of King Arthur and the Knights of the Round Table."
+  },
+  {
+    "title": "Kung Fu Hustle",
+    "year": 2004,
+    "imdbId": "tt0373074",
+    "imdbRating": "7.7",
+    "runtime": "99 min",
+    "genre": "Action, Comedy, Fantasy",
+    "plot": "In Shanghai, China in the 1940s, a wannabe gangster aspires to join the notorious \"Axe Gang\" while residents of a housing complex exhibit extraordinary powers in defending their turf."
+  },
+  {
+    "title": "L.A. Confidential",
+    "year": 1997,
+    "imdbId": "tt0119488",
+    "imdbRating": "8.2",
+    "runtime": "138 min",
+    "genre": "Crime, Drama, Mystery",
+    "plot": "As corruption grows in 1950s Los Angeles, three policemen - one strait-laced, one brutal, and one sleazy - investigate a series of murders with their own brand of justice."
+  },
+  {
+    "title": "Lucky Number Slevin",
+    "year": 2006,
+    "imdbId": "tt0425210",
+    "imdbRating": "7.7",
+    "runtime": "110 min",
+    "genre": "Crime, Drama, Thriller",
+    "plot": "A case of mistaken identity lands Slevin into the middle of a war being plotted by two of the city's rival crime bosses. Under constant surveillance by Detective Brikowski and assassin Goodkat, he must get them before they get him."
+  },
+  {
+    "title": "Now You See Me",
+    "year": 2013,
+    "imdbId": "tt1670345",
+    "imdbRating": "7.2",
+    "runtime": "115 min",
+    "genre": "Crime, Mystery, Thriller",
+    "plot": "An FBI agent and an Interpol detective track a team of illusionists who pull off bank heists during their performances, and reward their audiences with the money."
+  },
+  {
+    "title": "Ong-Bak: The Thai Warrior",
+    "year": 2003,
+    "imdbId": "tt0368909",
+    "imdbRating": "7.1",
+    "runtime": "105 min",
+    "genre": "Action, Crime, Thriller",
+    "plot": "When the head of a statue sacred to a village is stolen, a young martial artist goes to the big city and finds himself taking on the underworld to retrieve it."
+  },
+  {
+    "title": "Ong Bak 2",
+    "year": 2008,
+    "imdbId": "tt0785035",
+    "imdbRating": "6.2",
+    "runtime": "98 min",
+    "genre": "Action",
+    "plot": "A young Thai boxer learns the skills and inner meaning of martial arts."
+  },
+  {
+    "title": "Ong Bak 3",
+    "year": 2010,
+    "imdbId": "tt1653690",
+    "imdbRating": "4.9",
+    "runtime": "99 min",
+    "genre": "Action",
+    "plot": "Continuing from Ong Bak 2's 1440s, Prince Tien fails to revenge his parents' murder by the evil new ruler. The beaten Tien is rescued. Can he bring peace to the kingdom?"
+  },
+  {
+    "title": "Overboard",
+    "year": 2018,
+    "imdbId": "tt1563742",
+    "imdbRating": "6.0",
+    "runtime": "112 min",
+    "genre": "Comedy, Romance",
+    "plot": "After a spoiled, wealthy yacht owner is thrown overboard and loses his memory, a mistreated employee convinces him that he is her working-class husband."
+  },
+  {
+    "title": "Raise Your Voice",
+    "year": 2004,
+    "imdbId": "tt0361696",
+    "imdbRating": "5.8",
+    "runtime": "103 min",
+    "genre": "Family, Music, Musical",
+    "plot": "Terri Fletcher is a small town girl with the voice of a big-time singer. When personal tragedy interrupts her steady life, Terri defies her father's wishes and secretly heads off to spend a summer at a Los Angeles performing arts ..."
+  },
+  {
+    "title": "Red Scorpion",
+    "year": 1988,
+    "imdbId": "tt0098180",
+    "imdbRating": "5.2",
+    "runtime": "105 min",
+    "genre": "Action, Adventure",
+    "plot": "A Spetsnaz commando is sent on a covert mission by his Soviet superiors to infiltrate a rebel army and assassinate its leader."
+  },
+  {
+    "title": "RocknRolla",
+    "year": 2008,
+    "imdbId": "tt1032755",
+    "imdbRating": "7.2",
+    "runtime": "114 min",
+    "genre": "Action, Crime, Thriller",
+    "plot": "When a Russian mobster orchestrates a crooked land deal, millions of dollars are up for grabs, drawing in the entire London underworld into a feeding frenzy at a time when the old criminal regime is losing turf to a wealthy foreig..."
+  },
+  {
+    "title": "Romeo Must Die",
+    "year": 2000,
+    "imdbId": "tt0165929",
+    "imdbRating": "6.1",
+    "runtime": "115 min",
+    "genre": "Action, Crime, Thriller",
+    "plot": "An avenging cop seeks out his brother's killer and falls for the daughter of a businessman who is involved in a money-deal with his father."
+  },
+  {
+    "title": "Snatch",
+    "year": 2000,
+    "imdbId": "tt0208092",
+    "imdbRating": "8.2",
+    "runtime": "102 min",
+    "genre": "Comedy, Crime",
+    "plot": "Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly Jewish jewelers fight to track down a priceless stolen diamond."
+  },
+  {
+    "title": "Stand Up Guys",
+    "year": 2012,
+    "imdbId": "tt1389096",
+    "imdbRating": "6.4",
+    "runtime": "95 min",
+    "genre": "Comedy, Crime, Thriller",
+    "plot": "A pair of aging stickup men try to get the old gang back together for one last hurrah before one of the guys takes his last assignment - to kill his comrade."
+  },
+  {
+    "title": "Taken",
+    "year": 2008,
+    "imdbId": "tt0936501",
+    "imdbRating": "7.7",
+    "runtime": "90 min",
+    "genre": "Action, Crime, Thriller",
+    "plot": "A retired CIA agent travels across Europe and relies on his old skills to save his estranged daughter, who has been kidnapped while on a trip to Paris."
+  },
+  {
+    "title": "Target Number One",
+    "year": 2020,
+    "imdbId": "tt1656177",
+    "imdbRating": "6.2",
+    "runtime": "125 min",
+    "genre": "Crime, Drama, History",
+    "plot": "In 1989, a Canadian journalist investigates the circumstances surrounding the suspicious arrest of a heroin addict imprisoned in a Thai jail."
+  },
+  {
+    "title": "The Departed",
+    "year": 2006,
+    "imdbId": "tt0407887",
+    "imdbRating": "8.5",
+    "runtime": "151 min",
+    "genre": "Crime, Drama, Thriller",
+    "plot": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
+  },
+  {
+    "title": "The International",
+    "year": 2009,
+    "imdbId": "tt0963178",
+    "imdbRating": "6.5",
+    "runtime": "118 min",
+    "genre": "Action, Crime, Drama",
+    "plot": "An Interpol agent attempts to expose a high-profile financial institution's role in an international arms dealing ring."
+  },
+  {
+    "title": "The Mask of Zorro",
+    "year": 1998,
+    "imdbId": "tt0120746",
+    "imdbRating": "6.8",
+    "runtime": "136 min",
+    "genre": "Action, Adventure, Comedy",
+    "plot": "A young thief seeking revenge for his brother's death is trained by the once-great, aging Zorro, who is pursuing his own vengeance."
+  },
+  {
+    "title": "The 6th Day",
+    "year": 2000,
+    "imdbId": "tt0216216",
+    "imdbRating": "5.9",
+    "runtime": "123 min",
+    "genre": "Action, Mystery, Sci-Fi",
+    "plot": "A man meets a clone of himself and stumbles into a grand conspiracy about clones taking over the world."
+  },
+  {
+    "title": "The Courier",
+    "year": 2019,
+    "imdbId": "tt8075016",
+    "imdbRating": "4.8",
+    "runtime": "99 min",
+    "genre": "Action, Crime, Drama",
+    "plot": "A courier in London discovers that one of the packages she's transporting is a bomb."
+  },
+  {
+    "title": "The Green Mile",
+    "year": 1999,
+    "imdbId": "tt0120689",
+    "imdbRating": "8.6",
+    "runtime": "189 min",
+    "genre": "Crime, Drama, Fantasy",
+    "plot": "A death row guard learns that a gentle giant in his charge possesses a mysterious gift."
+  },
+  {
+    "title": "The Karate Kid",
+    "year": 1984,
+    "imdbId": "tt0087538",
+    "imdbRating": "7.3",
+    "runtime": "126 min",
+    "genre": "Action, Drama, Family",
+    "plot": "Recently relocated from NJ to LA, Daniel becomes the target of a gang of Cobra Kai dojo students. When Mr. Miyagi saves him with expert Karate skills, Daniel convinces him to teach him to defend himself, and put his bullies in the..."
+  },
+  {
+    "title": "The New Guy",
+    "year": 2002,
+    "imdbId": "tt0241760",
+    "imdbRating": "5.8",
+    "runtime": "88 min",
+    "genre": "Comedy",
+    "plot": "A high school senior branded uncool in the ninth grade gets himself expelled so he changes his image to cool kid at the town's other high school."
+  },
+  {
+    "title": "The Professor",
+    "year": 2018,
+    "imdbId": "tt6865690",
+    "imdbRating": "6.7",
+    "runtime": "90 min",
+    "genre": "Comedy, Drama",
+    "plot": "A college professor lives his life with reckless abandon after being diagnosed with a terminal illness."
+  },
+  {
+    "title": "The Siege",
+    "year": 1998,
+    "imdbId": "tt0133952",
+    "imdbRating": "6.4",
+    "runtime": "116 min",
+    "genre": "Action, Thriller",
+    "plot": "The secret U.S. abduction of a suspected terrorist leads to a wave of terrorist attacks in New York City, which leads to the declaration of martial-law."
+  },
+  {
+    "title": "The Sum of All Fears",
+    "year": 2002,
+    "imdbId": "tt0164184",
+    "imdbRating": "6.5",
+    "runtime": "124 min",
+    "genre": "Action, Drama, Thriller",
+    "plot": "CIA analyst Jack Ryan must stop the plans of a Neo-Nazi faction that threatens to incite a catastrophic conflict between the United States and Russia by detonating a nuclear weapon at a football game in Baltimore, Maryland."
+  },
+  {
+    "title": "The Thomas Crown Affair",
+    "year": 1999,
+    "imdbId": "tt0155267",
+    "imdbRating": "6.9",
+    "runtime": "113 min",
+    "genre": "Crime, Romance, Thriller",
+    "plot": "A very rich and successful playboy amuses himself by stealing artwork, but may have met his match in a seductive detective."
+  },
+  {
+    "title": "The Usual Suspects",
+    "year": 1995,
+    "imdbId": "tt0114814",
+    "imdbRating": "8.5",
+    "runtime": "106 min",
+    "genre": "Crime, Drama, Mystery",
+    "plot": "The sole survivor of a pier shoot-out tells the story of how a notorious criminal influenced the events that began with five criminals meeting in a seemingly random police lineup."
+  },
+  {
+    "title": "The Warrior's Way",
+    "year": 2010,
+    "imdbId": "tt1032751",
+    "imdbRating": "6.3",
+    "runtime": "100 min",
+    "genre": "Action, Drama, Fantasy",
+    "plot": "A warrior-assassin is forced to hide in a small town in the American Badlands after refusing a mission."
+  },
+  {
+    "title": "This Means War",
+    "year": 2012,
+    "imdbId": "tt1596350",
+    "imdbRating": "6.3",
+    "runtime": "103 min",
+    "genre": "Action, Comedy, Romance",
+    "plot": "CIA agents and best friends Franklin and Tuck discover that they are in love with the same woman. Each of them then decides to win her over by using their own skills."
+  },
+  {
+    "title": "Tron: Legacy",
+    "year": 2010,
+    "imdbId": "tt1104001",
+    "imdbRating": "6.8",
+    "runtime": "125 min",
+    "genre": "Action, Adventure, Sci-Fi",
+    "plot": "The son of a computer programmer goes looking for his father and ends up inside the digital world that his father designed. He meets his father's corrupted creation and a unique ally who was born inside the digital world."
+  },
+  {
+    "title": "Uncle Drew",
+    "year": 2018,
+    "imdbId": "tt7334528",
+    "imdbRating": "5.8",
+    "runtime": "103 min",
+    "genre": "Comedy, Drama, Sport",
+    "plot": "An anti-ageist comedy about a man's dream to win the Rucker Classic street ball tournament in Harlem."
+  },
+  {
+    "title": "V for Vendetta",
+    "year": 2005,
+    "imdbId": "tt0434409",
+    "imdbRating": "8.1",
+    "runtime": "132 min",
+    "genre": "Action, Drama, Sci-Fi",
+    "plot": "A young woman living in a dystopian society meets a shadowy freedom fighter who is plotting to overthrow their tyrannical government."
+  },
+  {
+    "title": "Wanted",
+    "year": 2008,
+    "imdbId": "tt0493464",
+    "imdbRating": "6.7",
+    "runtime": "110 min",
+    "genre": "Action, Crime, Thriller",
+    "plot": "A frustrated office worker discovers that he is the son of a professional assassin, and that he shares his father's superhuman killing abilities."
+  }
+]
